@@ -1,0 +1,79 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f8f8f8; /* Light gray background */
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+  background-color: #ffffff; /* White container background */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #333;
+}
+
+.memory-game {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  background: #f0f0f0; /* Light gray card background */
+  transition: 0.5s;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card.boxOpen {
+  transform: rotateY(0deg);
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: #6cb2eb; /* Light blue card overlay color */
+  border-radius: 8px;
+  transition: 0.5s;
+  transform: rotate(0deg);
+  backface-visibility: hidden;
+}
+
+.boxOpen::after {
+  transform: rotateY(180deg);
+}
+
+.game-info {
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #4caf50; /* Green button color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
